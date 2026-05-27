@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kitcher Gabriel Tetteh — KNUST SRC President 2026/2027</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1F3A;
+    --gold: #C9991A;
+    --gold-light: #F0C74A;
+    --cream: #FAFAF7;
+    --white: #ffffff;
+    --gray: #6B7280;
+    --light-gray: #F3F4F6;
+    --border: #E5E7EB;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 18px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--navy);
+    letter-spacing: 0.01em;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; }
+  .nav-cta {
+    background: var(--navy);
+    color: white !important;
+    padding: 9px 22px;
+    border-radius: 100px;
+    opacity: 1 !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold) !important; color: var(--navy) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 40px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #ffffff 0%, #f0ede4 50%, #e8e3d4 100%);
+    z-index: 0;
+  }
+  .hero-circle-1 {
+    position: absolute; top: -100px; right: -100px;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,153,26,0.12) 0%, transparent 70%);
+    z-index: 0;
+  }
+  .hero-circle-2 {
+    position: absolute; bottom: -150px; left: -80px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(11,31,58,0.07) 0%, transparent 70%);
+    z-index: 0;
+  }
+  .hero-lines {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: repeating-linear-gradient(
+      0deg, transparent, transparent 60px,
+      rgba(11,31,58,0.025) 60px, rgba(11,31,58,0.025) 61px
+    );
+    z-index: 0;
+  }
+  .hero-content {
+    position: relative; z-index: 1;
+    max-width: 900px; margin: 0 auto; width: 100%;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--navy); color: white;
+    padding: 6px 16px; border-radius: 100px;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s ease forwards;
+  }
+  .hero-badge::before {
+    content: ''; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold-light);
+  }
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 1.05;
+    color: var(--navy);
+    margin-bottom: 8px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-tagline {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    color: var(--navy);
+    opacity: 0.5;
+    font-style: italic;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-desc {
+    font-size: 17px; line-height: 1.75;
+    color: var(--navy); opacity: 0.65;
+    max-width: 560px;
+    margin-bottom: 44px;
+    font-weight: 400;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .hero-btns {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .btn-primary {
+    background: var(--navy); color: white;
+    padding: 14px 36px; border-radius: 100px;
+    font-size: 15px; font-weight: 600;
+    text-decoration: none; letter-spacing: 0.02em;
+    transition: all 0.25s;
+    border: 2px solid var(--navy);
+  }
+  .btn-primary:hover { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+  .btn-outline {
+    background: transparent; color: var(--navy);
+    padding: 14px 36px; border-radius: 100px;
+    font-size: 15px; font-weight: 600;
+    text-decoration: none; letter-spacing: 0.02em;
+    border: 2px solid var(--navy);
+    transition: all 0.25s;
+    opacity: 0.7;
+  }
+  .btn-outline:hover { opacity: 1; background: var(--navy); color: white; }
+  .hero-scroll {
+    position: absolute; bottom: 40px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    animation: fadeUp 1s 0.8s ease both;
+    z-index: 1;
+  }
+  .hero-scroll span { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.4; }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: linear-gradient(to bottom, var(--navy), transparent);
+    opacity: 0.3;
+    animation: scrollPulse 2s infinite;
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--navy);
+    padding: 60px 40px;
+  }
+  .stats-grid {
+    max-width: 900px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px; text-align: center;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px; color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px; color: rgba(255,255,255,0.5);
+    margin-top: 8px; text-transform: uppercase; letter-spacing: 0.08em;
+    font-weight: 500;
+  }
+  .stat-divider {
+    width: 1px; background: rgba(255,255,255,0.1);
+    align-self: stretch;
+  }
+
+  /* ABOUT */
+  .section { padding: 100px 40px; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::before {
+    content: ''; display: block; width: 32px; height: 2px; background: var(--gold);
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.15; color: var(--navy);
+    margin-bottom: 24px;
+  }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center;
+  }
+  .about-text p {
+    font-size: 16px; line-height: 1.8; color: var(--navy);
+    opacity: 0.7; margin-bottom: 20px;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-card {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 48px 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '"';
+    position: absolute; top: -20px; left: 24px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 160px; color: rgba(201,153,26,0.15);
+    line-height: 1;
+  }
+  .about-quote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; line-height: 1.5;
+    font-style: italic;
+    position: relative; z-index: 1;
+    margin-bottom: 24px;
+  }
+  .about-author { font-size: 13px; color: rgba(255,255,255,0.5); font-weight: 500; letter-spacing: 0.05em; }
+  .about-author strong { color: var(--gold); }
+
+  /* VISION */
+  .vision { background: #F8F6F0; padding: 100px 40px; }
+  .vision-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px; margin-top: 56px;
+  }
+  .vision-card {
+    background: white; border-radius: 16px; padding: 36px 32px;
+    border: 1px solid var(--border);
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .vision-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .vision-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+  .vision-card:hover::after { transform: scaleX(1); }
+  .vision-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: rgba(11,31,58,0.06);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 20px;
+  }
+  .vision-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; color: var(--navy); margin-bottom: 10px;
+  }
+  .vision-card p { font-size: 14px; line-height: 1.7; color: var(--gray); }
+
+  /* PLATFORM */
+  .platform { padding: 100px 40px; }
+  .platform-list { margin-top: 56px; }
+  .platform-item {
+    display: flex; gap: 32px; align-items: flex-start;
+    padding: 36px 0; border-bottom: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .platform-item:first-child { border-top: 1px solid var(--border); }
+  .platform-item:hover { padding-left: 12px; }
+  .platform-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px; color: rgba(11,31,58,0.08);
+    line-height: 1; width: 64px; flex-shrink: 0;
+    font-style: italic;
+  }
+  .platform-content { flex: 1; }
+  .platform-content h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px; color: var(--navy); margin-bottom: 10px;
+  }
+  .platform-content p { font-size: 15px; line-height: 1.7; color: var(--gray); }
+  .platform-tag {
+    background: rgba(201,153,26,0.1); color: var(--gold);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 4px 12px; border-radius: 100px;
+    display: inline-block; margin-top: 12px;
+  }
+
+  /* JOIN */
+  .join {
+    background: var(--navy); padding: 100px 40px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .join-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,153,26,0.12) 0%, transparent 70%);
+  }
+  .join-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+  .join h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 52px); color: white; line-height: 1.2; margin-bottom: 20px;
+  }
+  .join h2 em { color: var(--gold); font-style: italic; }
+  .join p { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.6); margin-bottom: 44px; }
+  .join-form {
+    display: flex; gap: 12px; max-width: 480px; margin: 0 auto 20px;
+    flex-wrap: wrap;
+  }
+  .join-form input {
+    flex: 1; min-width: 200px;
+    padding: 14px 20px; border-radius: 100px;
+    border: 1.5px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.06);
+    color: white; font-family: 'Outfit', sans-serif;
+    font-size: 14px; outline: none;
+    transition: border-color 0.2s;
+  }
+  .join-form input::placeholder { color: rgba(255,255,255,0.35); }
+  .join-form input:focus { border-color: var(--gold); }
+  .btn-gold {
+    background: var(--gold); color: var(--navy);
+    padding: 14px 28px; border-radius: 100px;
+    font-size: 14px; font-weight: 700; border: none;
+    cursor: pointer; font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.02em;
+    transition: all 0.2s;
+  }
+  .btn-gold:hover { background: var(--gold-light); transform: scale(1.02); }
+  .join-note { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 16px; }
+
+  /* FOOTER */
+  footer {
+    background: #060f1d; padding: 48px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 24px;
+  }
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px; color: white;
+  }
+  .footer-logo span { color: var(--gold); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a {
+    color: rgba(255,255,255,0.4); text-decoration: none;
+    font-size: 13px; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); width: 100%; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); margin-top: 8px; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.7; }
+  }
+
+  .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 16px 20px; }
+    .nav-links { display: none; }
+    .hero { padding: 100px 24px 80px; }
+    .section { padding: 70px 24px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .vision { padding: 70px 24px; }
+    .platform { padding: 70px 24px; }
+    .join { padding: 70px 24px; }
+    footer { padding: 40px 24px; flex-direction: column; text-align: center; }
+    .platform-item:hover { padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">KG<span>T</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#platform">Platform</a></li>
+    <li><a href="#join" class="nav-cta">Join the Movement</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-circle-1"></div>
+  <div class="hero-circle-2"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-badge">KNUST SRC Presidential Candidate · 2026/2027</div>
+    <h1 class="hero-name">Kitcher<br /><em>Gabriel</em> Tetteh</h1>
+    <p class="hero-tagline">A new voice. A real plan. A KNUST for all.</p>
+    <p class="hero-desc">I am running for SRC President to build a KNUST where every student — regardless of faculty, hall, or background — is heard, supported, and empowered to succeed.</p>
+    <div class="hero-btns">
+      <a href="#vision" class="btn-primary">See My Vision</a>
+      <a href="#join" class="btn-outline">Join the Movement</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-num">6+</div>
+      <div class="stat-label">Colleges to Represent</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">15K+</div>
+      <div class="stat-label">Students to Serve</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Vision — One KNUST</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Commitment to Students</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text fade-in">
+        <div class="section-label">About Kitcher</div>
+        <h2 class="section-title">Born from the student experience</h2>
+        <p>I am Kitcher Gabriel Tetteh — a student of the Faculty of Biochemistry and Biotechnology at KNUST. I am not running because I have always been in a position of power. I am running because I know what it feels like to be an ordinary student with extraordinary needs that go unheard.</p>
+        <p>My campaign is rooted in one fundamental belief: that every student at KNUST deserves leadership that genuinely sees them — across every faculty, every hall, every background.</p>
+        <a href="#platform" class="btn-primary" style="display:inline-block; margin-top:8px;">My Platform →</a>
+      </div>
+      <div class="about-visual fade-in">
+        <div class="about-card">
+          <div class="about-quote">"The best leadership is not the loudest voice in the room — it is the most trusted one."</div>
+          <div class="about-author">— <strong>Kitcher Gabriel Tetteh</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision" id="vision">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="section-label">My Vision</div>
+      <h2 class="section-title">What I stand for</h2>
+    </div>
+    <div class="vision-grid">
+      <div class="vision-card fade-in">
+        <div class="vision-icon">🎓</div>
+        <h3>Academic Excellence</h3>
+        <p>Strengthening academic welfare systems, improving library access, and building transparent pathways for student concerns to reach decision-makers.</p>
+      </div>
+      <div class="vision-card fade-in">
+        <div class="vision-icon">💡</div>
+        <h3>Student Innovation</h3>
+        <p>Creating pipelines between KNUST students and industry — internships, mentorship programs, and entrepreneurship support for every faculty.</p>
+      </div>
+      <div class="vision-card fade-in">
+        <div class="vision-icon">🤝</div>
+        <h3>Inclusive Representation</h3>
+        <p>Ensuring every college, hall, and student group has a genuine seat at the table — not just during campaigns, but every single day.</p>
+      </div>
+      <div class="vision-card fade-in">
+        <div class="vision-icon">🏥</div>
+        <h3>Student Welfare</h3>
+        <p>Improving access to health services, mental wellness support, and emergency student funds that actually reach those who need them.</p>
+      </div>
+      <div class="vision-card fade-in">
+        <div class="vision-icon">📶</div>
+        <h3>Digital Access</h3>
+        <p>Advocating for reliable campus internet, accessible digital learning tools, and tech infrastructure that matches KNUST's world-class ambitions.</p>
+      </div>
+      <div class="vision-card fade-in">
+        <div class="vision-icon">🔒</div>
+        <h3>Campus Safety</h3>
+        <p>Improving lighting, security infrastructure, and accountability systems to make KNUST a place every student feels safe — day and night.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="platform" id="platform">
+  <div class="section-inner">
+    <div class="fade-in">
+      <div class="section-label">The Platform</div>
+      <h2 class="section-title">Specific. Achievable. Yours.</h2>
+    </div>
+    <div class="platform-list">
+      <div class="platform-item fade-in">
+        <div class="platform-num">01</div>
+        <div class="platform-content">
+          <h3>The Student Voice Initiative</h3>
+          <p>A structured, regular system for collecting and acting on student feedback — not suggestion boxes that gather dust, but a real feedback loop between the SRC and the student body with published responses and timelines.</p>
+          <span class="platform-tag">Governance</span>
+        </div>
+      </div>
+      <div class="platform-item fade-in">
+        <div class="platform-num">02</div>
+        <div class="platform-content">
+          <h3>KNUST Career Bridge Program</h3>
+          <p>A faculty-specific internship and mentorship pipeline connecting students with industry professionals and alumni — making the transition from campus to career smoother for every discipline.</p>
+          <span class="platform-tag">Career Development</span>
+        </div>
+      </div>
+      <div class="platform-item fade-in">
+        <div class="platform-num">03</div>
+        <div class="platform-content">
+          <h3>Wellness & Mental Health Fund</h3>
+          <p>Dedicated resources and peer support structures for student mental health, in partnership with the KNUST Hospital and qualified professionals — because academic success starts with personal wellbeing.</p>
+          <span class="platform-tag">Student Welfare</span>
+        </div>
+      </div>
+      <div class="platform-item fade-in">
+        <div class="platform-num">04</div>
+        <div class="platform-content">
+          <h3>Campus Digital Upgrade Advocacy</h3>
+          <p>A sustained push to improve WiFi access, digital learning platforms, and computer lab availability — working directly with KNUST management to deliver measurable improvements within the academic year.</p>
+          <span class="platform-tag">Technology</span>
+        </div>
+      </div>
+      <div class="platform-item fade-in">
+        <div class="platform-num">05</div>
+        <div class="platform-content">
+          <h3>Emergency Student Support Fund</h3>
+          <p>A transparent, accessible emergency financial support system for students facing unexpected hardships — with clear criteria, fast processing, and real accountability on how funds are managed.</p>
+          <span class="platform-tag">Financial Welfare</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join" id="join">
+  <div class="join-bg"></div>
+  <div class="join-inner">
+    <div class="section-label" style="justify-content:center; color: var(--gold);">
+      Join the Movement
+    </div>
+    <h2>This campaign belongs to <em>every student</em></h2>
+    <p>Whether you're in Engineering, Business, Health Sciences, or any corner of KNUST — if you believe in a better student experience, there is a place for you in this movement.</p>
+    <div class="join-form">
+      <input type="text" placeholder="Your name" id="joinName"/>
+      <input type="text" placeholder="Your WhatsApp number" id="joinPhone"/>
+      <button class="btn-gold" onclick="handleJoin()">Join Now</button>
+    </div>
+    <div id="joinMsg" style="color: var(--gold); font-size:14px; min-height:20px; margin-top:4px;"></div>
+    <p class="join-note">Your information is kept private and will only be used for campaign coordination.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Kitcher Gabriel <span>Tetteh</span></div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#vision">Vision</a>
+    <a href="#platform">Platform</a>
+    <a href="#join">Join</a>
+  </div>
+  <div class="footer-copy">© 2026 Kitcher Gabriel Tetteh · KNUST SRC Presidential Campaign 2026/2027 · All rights reserved.</div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Join form
+  function handleJoin() {
+    const name = document.getElementById('joinName').value.trim();
+    const phone = document.getElementById('joinPhone').value.trim();
+    const msg = document.getElementById('joinMsg');
+    if (!name || !phone) {
+      msg.style.color = '#f87171';
+      msg.textContent = 'Please enter both your name and WhatsApp number.';
+      return;
+    }
+    msg.style.color = '#C9991A';
+    msg.textContent = `✓ Welcome to the movement, ${name}! We'll be in touch soon.`;
+    document.getElementById('joinName').value = '';
+    document.getElementById('joinPhone').value = '';
+  }
+</script>
+</body>
+</html>
